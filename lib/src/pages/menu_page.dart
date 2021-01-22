@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lojacar/src/pages/clients_page.dart';
+import 'package:lojacar/src/pages/employees_page.dart';
 
 class MenuLateral extends StatelessWidget{
 
@@ -22,11 +23,13 @@ class MenuLateral extends StatelessWidget{
 
 
           ),
-
+  ///https://material.io/resources/icons/?style=baseline
           Ink(
-            color: Colors.indigo,
+            //color: Colors.indigo,
             child: new ListTile(
-              title: Text("Usuarios", style: TextStyle(color: Colors.white),),
+              leading: Icon(Icons.assignment_turned_in, size: 50.0,),
+              trailing: Icon(Icons.arrow_forward_ios),
+              title: Text("Actividades"),
               onTap: (){
                 Navigator.pop(context);
                 Navigator.push(context,
@@ -34,16 +37,35 @@ class MenuLateral extends StatelessWidget{
       
                         builder: (BuildContext context) => new ClientsPage())
                 );
+                
               },
+              
             ),
           ),
+           Divider(),
           new ListTile(
-            title: Text("Clientes"),
+            leading: Icon(Icons.people_alt, size: 50.0,),
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text("Clientes Odoo"),
             onTap: (){
               Navigator.pop(context);
               Navigator.push(context,
                   new MaterialPageRoute(
                      builder: (BuildContext conetext) => new ClientsPage())
+              );
+              Divider();
+            },
+          ),
+          Divider(),
+          new ListTile(
+            leading: Icon(Icons.home_work, size: 50.0),
+            trailing: Icon(Icons.arrow_forward_ios),
+            title: Text("Empleados"),
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.push(context,
+                  new MaterialPageRoute(
+                     builder: (BuildContext conetext) => new EmployeePage())
               );
             },
           )

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lojacar/src/providers/clients_providers.dart';
 
+import 'details_page.dart';
+
 class ClientsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,19 +42,34 @@ class ClientsPage extends StatelessWidget {
                   style: TextStyle(fontSize: 70),
                   )));
           } else {
+            
             return ListView.builder(
+               
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
+               
                 return ListTile(
-                  leading: Icon(Icons.contact_mail, size: 50.0),
+                   
+                  leading: Icon(Icons.contacts, size: 50.0),
                   title: Text(snapshot.data[index].name),
                   subtitle: Text(snapshot.data[index].email),
+                
                   trailing: Icon(Icons.keyboard_arrow_right),
-                  onTap: () {},
+                  
+                  onTap: () {
+
+                     Navigator.push(context, new MaterialPageRoute(builder: (context)=>DetailPage(snapshot.data[index]))
+                        );
+                  },
+                  
                 );
+                
               },
+              
             );
+             
           }
         });
   }
+  
 }

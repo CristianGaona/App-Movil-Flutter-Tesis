@@ -21,7 +21,6 @@ class ClientsProvider  {
 
     for (var u in decodedData ) {
       Client user =  Client.m(id: u["id"], name: u["name"], email: u["email"]);
-      //u["id"], u["name"], u["email"], u["phone"], u["function"], u["commercial_company_name"], u["street"], u["zip"] , u["city"], u["pais"], u["write_date"],
       clients.add(user);
     }
     print(clients.length);
