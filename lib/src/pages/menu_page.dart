@@ -51,7 +51,7 @@ class MenuLateral extends StatelessWidget{
               Navigator.pop(context);
               Navigator.push(context,
                   new MaterialPageRoute(
-                     builder: (BuildContext conetext) => new ClientsPage())
+                     builder: (BuildContext context) => new ClientsPage())
               );
               Divider();
             },

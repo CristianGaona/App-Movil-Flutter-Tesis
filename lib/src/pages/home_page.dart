@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Hola esta es la página de incio'
+      'Hola esta es la página de inicio'
     );
     
   }

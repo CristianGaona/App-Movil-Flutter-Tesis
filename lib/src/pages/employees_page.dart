@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:lojacar/src/pages/activities_employee_page.dart';
 import 'package:lojacar/src/providers/employees_providers.dart';
 
 class EmployeePage extends StatelessWidget {
@@ -55,7 +56,14 @@ class EmployeePage extends StatelessWidget {
                   subtitle: Text(snapshot.data[index].rol),
                   trailing: Icon(Icons.keyboard_arrow_right),
 
-                  onTap:(){},
+                  onTap:(){
+                    print(snapshot.data[index].employeeId);
+
+                    Navigator.push(context, new MaterialPageRoute(builder: (context)=>ActivityPage(snapshot.data[index]))
+                        );
+
+
+                  },
 
                 );
               },
@@ -67,3 +75,5 @@ class EmployeePage extends StatelessWidget {
   }
 
 }
+
+//https://material.io/resources/icons/?icon=assignment_turned_in&style=baseline

@@ -57,6 +57,7 @@ class ClientsPage extends StatelessWidget {
                   trailing: Icon(Icons.keyboard_arrow_right),
                   
                   onTap: () {
+                    print(snapshot.data[index].id);
 
                      Navigator.push(context, new MaterialPageRoute(builder: (context)=>DetailPage(snapshot.data[index]))
                         );
